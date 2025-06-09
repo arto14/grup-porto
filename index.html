@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porto Grup</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="party-bg"></div>
+    
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                <div class="col">
+                    <h1 class="mb-0 text-center">
+                        <i class="fas fa-users me-3"></i>Portfolio Showcase
+                    </h1>
+                </div>
+                <div class="col-auto">
+                    <button onclick="handleLogout()" class="btn btn-outline-light">
+                        <i class="fas fa-sign-out-alt me-2"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="person-selector">
+            <h3 class="text-white text-center mb-0">
+                <i class="fas fa-user-friends me-2"></i>Pilih Profil
+            </h3>
+            <div class="person-grid" id="personGrid"></div>
+        </div>
+
+        <div class="main-content loading" id="mainContent">
+            <div class="profile-header">
+                <div class="profile-avatar" id="profileAvatar"></div>
+                <div class="profile-info">
+                    <h2 id="profileName"></h2>
+                    <div class="profile-role" id="profileRole"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-user"></i>About
+                </h3>
+                <div class="section-content" id="aboutContent"></div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-cogs"></i>Skills
+                </h3>
+                <div class="skills-grid" id="skillsGrid"></div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-book-open"></i>Cerita
+                </h3>
+                <div class="section-content" id="storyContent"></div>
+            </div>
+
+            <div class="section">
+                <h3 class="section-title">
+                    <i class="fas fa-share-alt"></i>Social Media
+                </h3>
+                <div class="section-content">
+                    <div class="social-media-links" id="socialMedia"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Create balloons
+        function createBalloons() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96c93d', '#ffd93d'];
+            for (let i = 0; i < 15; i++) {
+                const balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.top = '100vh';
+                balloon.style.background = colors[Math.floor(Math.random() * colors.length)];
+                balloon.style.animationDelay = (Math.random() * 5) + 's';
+                document.body.appendChild(balloon);
+            }
+        }
+
+        // Create party stars
+        function createStars() {
+            for (let i = 0; i < 30; i++) {
+                const star = document.createElement('div');
+                star.className = 'party-star';
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = '100vh';
+                star.style.animationDelay = (Math.random() * 12) + 's';
+                star.style.opacity = 0.5 + Math.random() * 0.5;
+                document.body.appendChild(star);
+            }
+        }
+
+        // Trigger confetti
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // Confetti interval
+        function startConfettiInterval() {
+            setInterval(triggerConfetti, 8000);
+        }
+
+        // Check authentication
+        function checkAuth() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'login.html';
+            }
+        }
+
+        // Handle logout
+        function handleLogout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'login.html';
+        }
+
+        // Initialize party effects
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+            createBalloons();
+            createStars();
+            triggerConfetti();
+            startConfettiInterval();
+        });
+    </script>
+</body>
+</html>
