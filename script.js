@@ -2,7 +2,7 @@ const people = [
             {
                 id: 1,
                 name: "Saddam Davi",
-                role: "Minion",
+                role: "202243500598",
                 avatar: "SJ",
                 photo: "assets/sddm.jpg",
                 about: "Translator yang suka belajar bahasa asing",
@@ -19,7 +19,7 @@ const people = [
             {
                 id: 2,
                 name: "Muhammad Ridho Hakim",
-                role: "Minion 2",
+                role: "202243500608",
                 avatar: "MC",
                 photo: "assets/idoy.jpg",
                 about: "IT support membantu instalasi jaringan",
@@ -37,7 +37,7 @@ const people = [
             {
                 id: 3,
                 name: "Faiz Arko Alhaqni",
-                role: "Minion 3",
+                role: "202243500611",
                 avatar: "ER",
                 photo: "assets/Faiz.jpg",
                 about: "Konten kreator gaming,microsoft word dan Microsoft excel.",
@@ -54,12 +54,12 @@ const people = [
             {
                 id: 4,
                 name: "Muhamad Arto Ragil Putra",
-                role: "Artist",
+                role: "202243500612",
                 avatar: "DK",
                 photo: "assets/arts.jpg",
                 about: "seorang seniman dan pencinta keindahan yang hidup bebas dan mandiri, tak dikendalikan oleh siapa pun.",
                 skills: [
-                    { name: "Melukis (at minyak, akrilik, cat air, dll)", level: 95 },
+                    { name: "Melukis (cat minyak, cat akrilik, cat air, dll)", level: 95 },
                     { name: "Menggambar (Manual dan Digital", level: 92 },
                     { name: "Imajinatif", level: 100 }
                 ],
@@ -72,7 +72,7 @@ const people = [
             {
                 id: 5,
                 name: "Azriel Widioko Deswanto",
-                role: "Traveler",
+                role: "202243500649",
                 avatar: "LZ",
                 photo: "assets/dio.jpg",
                 about: "Manage Keuangan, Beretika, Bernegosiasi.",
@@ -89,7 +89,7 @@ const people = [
             {
                 id: 6,
                 name: "Achmad Samudra Alfatihah",
-                role: "Longor",
+                role: "202243500654",
                 avatar: "JW",
                 photo: "assets/alfa.jpg",
                 about: "Kenek kuli yang Mengoperasikan molen (mesin adukan semen).",
@@ -106,7 +106,7 @@ const people = [
             {
                 id: 7,
                 name: "Irvan Firmansyah",
-                role: "Kga Mau Diatur",
+                role: "202243500655",
                 avatar: "MG",
                 photo: "assets/ipan.jpg",
                 about: "orang yang senang belajar musik (masih pemula).",
@@ -123,7 +123,7 @@ const people = [
             {
                 id: 8,
                 name: "Mahmud",
-                role: "Driver",
+                role: "202243500658",
                 avatar: "AT",
                 photo: "assets/amud.jpg",
                 about: "Setiap hari dimulai dengan niat bangun produktif.",
